@@ -16,13 +16,13 @@ public class IndexController {
     @Autowired
     CompanyRepository coRepo;
 
-    @GetMapping("/")
-    public String authorization() throws IOException {
-        return "auth";
-    }
+//    @GetMapping("/")
+//    public String authorization() throws IOException {
+//        return "auth";
+//    }
 
     @GetMapping("/index")
-    public String authorisa() throws IOException {
+    public String authorization() throws IOException {
         return "index";
     }
 

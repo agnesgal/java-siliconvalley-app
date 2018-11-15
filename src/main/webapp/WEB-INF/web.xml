@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>Boston Application</display-name>
+
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/static/*</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>com.auth0.domain</param-name>
+		<param-value>svalley.auth0.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.auth0.clientId</param-name>
+		<param-value>F5p3kAxbuFiei6BsbjO-EHDU2lPVPcBR</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.auth0.clientSecret</param-name>
+		<param-value>Fyjq8wugMTACPHVIiz66-t_VGEQOEmQfu8ifb3X2nI40T2sHni7T6deGFLE0rPtF</param-value>
+	</context-param>
+
+</web-app>
