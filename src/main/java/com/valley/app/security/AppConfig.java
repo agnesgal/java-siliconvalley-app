@@ -34,7 +34,7 @@ public class AppConfig {
     public FilterRegistrationBean filterRegistration() {
         final FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new Auth0Filter());
-        registration.addUrlPatterns("/portal/*");
+        registration.addUrlPatterns("/home/*");
         registration.setName(Auth0Filter.class.getSimpleName());
         return registration;
     }

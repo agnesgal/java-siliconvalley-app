@@ -45,7 +45,7 @@ public class CallbackController {
 
     public CallbackController(AppConfig config) {
         this.redirectOnFail = "/";
-        this.redirectOnSuccess = "/portal/home";
+        this.redirectOnSuccess = "/home";
         this.config = config;
     }
 
@@ -88,8 +88,11 @@ public class CallbackController {
             HttpHeaders headers = new HttpHeaders();
             headers.set("Authorization", "Bearer " + response.toString());
             HttpEntity entity = new HttpEntity(headers);
-            ResponseEntity<String> exchange = template.exchange(url, HttpMethod.GET, entity, String.class);
+            ResponseEntity<HashMap> exchange = template.exchange(url, HttpMethod.GET, entity, HashMap.class);
+            System.out.println(exchange.getBody());
             System.out.println(exchange.toString());
+            System.out.println(exchange.getBody().get("email"));
+
 
             res.sendRedirect(redirectOnSuccess);
         } catch (IdentityVerificationException e) {

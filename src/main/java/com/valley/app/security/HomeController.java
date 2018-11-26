@@ -17,7 +17,7 @@ public class HomeController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value = "/portal/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     protected String home(final Map<String, Object> model, final HttpServletRequest req) {
         if (SessionUtils.get(req, "accessToken") == null) { // not logged in
             return "redirect:/";

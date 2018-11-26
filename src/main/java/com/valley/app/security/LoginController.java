@@ -21,7 +21,7 @@ public class LoginController {
     protected String login(final HttpServletRequest req) {
 
         if (SessionUtils.get(req, "accessToken") != null) {
-            return "redirect:/portal/home";
+            return "redirect:/home";
         }
 
         logger.debug("Performing login");
