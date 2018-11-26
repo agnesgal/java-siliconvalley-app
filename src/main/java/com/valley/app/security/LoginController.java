@@ -1,5 +1,6 @@
 package com.valley.app.security;
 
+import com.auth0.SessionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class LoginController {
 
     @GetMapping(value = "/")
     protected String login(final HttpServletRequest req) {
+
+        if (SessionUtils.get(req, "accessToken") != null) {
+            return "redirect:/portal/home";
+        }
+
         logger.debug("Performing login");
         String redirectUri = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + "/callback";
         String authorizeUrl = controller.buildAuthorizeUrl(req, redirectUri);

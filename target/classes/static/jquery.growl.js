@@ -51,6 +51,7 @@
     };
 
     Growl.growl = function(settings) {
+      debugger;
       if (settings == null) {
         settings = {};
       }
@@ -267,8 +268,6 @@
       title: "Warning!",
       style: "warning"
     };
-    debugger;
-    console.log(options);
     return $.growl($.extend(settings, options));
   };
 

@@ -20,11 +20,13 @@ public class ProductAndCompanyService {
         Company microsoft = new Company("Microsoft", "Windows and blabla...", 1976, null);
         Company facebook = new Company("Facebook", "Mark Zuckerberg revolutionary idea based on...", 2008, null);
         Company asus = new Company("Asus", "Repuclib", 2008, null);
+        Company lenovo = new Company("Lenovo", "Something revolutainry here as well", 1995, null);
 
         coRepo.save(apple);
         coRepo.save(microsoft);
         coRepo.save(facebook);
         coRepo.save(asus);
+        coRepo.save(lenovo);
 
         Product p1 = new Product("iPhone 7", "Seventh time....", 2016, null);
         Product p2 = new Product("Macintosh", "Classic vintage computer with GUI....", 1984, null);
