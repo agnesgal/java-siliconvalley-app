@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="svalley@localhost" uuid="012ce34d-920a-4213-b2e6-52de05333d90">
+    <data-source name="svalley@localhost" uuid="6872cdae-5177-42b7-8254-514907bff5b8">
       <database-info product="PostgreSQL" version="10.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
+      <user-name>olyvia</user-name>
       <introspection-schemas>svalley:public</introspection-schemas>
     </data-source>
   </component>

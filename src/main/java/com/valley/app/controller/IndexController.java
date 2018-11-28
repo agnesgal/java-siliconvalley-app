@@ -3,6 +3,7 @@ package com.valley.app.controller;
 import com.auth0.SessionUtils;
 import com.valley.app.model.Company;
 import com.valley.app.repository.CompanyRepository;
+import com.valley.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +21,11 @@ public class IndexController {
 
     @GetMapping("/company")
     public String companiesView(Model model, final HttpServletRequest req) throws IOException {
-
         if (SessionUtils.get(req, "accessToken") == null) { // not logged in
             return "redirect:/";
         }
-
         List<Company> companyList = coRepo.findAll();
+
         model.addAttribute("companies", companyList);
         return "company";
     }

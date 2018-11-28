@@ -1,10 +1,9 @@
 package com.valley.app.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="usr")
 public class User {
 
     @Id
@@ -12,7 +11,10 @@ public class User {
     private long id;
 
     @Column(nullable = false)
-    private String sub;
+    private String usrId;
+
+    @Column(nullable = false)
+    private String email;
 
     @Column(nullable = false)
     private String given_name;
@@ -32,12 +34,20 @@ public class User {
     @Column(nullable = false)
     private String updated_at;
 
-    public String getSub() {
-        return sub;
+    public String getUsrId() {
+        return usrId;
     }
 
-    public void setSub(String sub) {
-        this.sub = sub;
+    public void setUsrId(String usrId) {
+        this.usrId = usrId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getGiven_name() {
@@ -88,8 +98,12 @@ public class User {
         this.updated_at = updated_at;
     }
 
-    public User(String sub, String given_name, String family_name, String nickname, String name, String picture, String updated_at) {
-        this.sub = sub;
+    public User() {
+    }
+
+    public User(String usrId, String email, String given_name, String family_name, String nickname, String name, String picture, String updated_at) {
+        this.usrId = usrId;
+        this.email = email;
         this.given_name = given_name;
         this.family_name = family_name;
         this.nickname = nickname;

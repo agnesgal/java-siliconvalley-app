@@ -16,6 +16,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.valley.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
@@ -42,6 +43,8 @@ public class CallbackController {
     private final AppConfig config;
     @Autowired
     private RestTemplateBuilder restTemplateBuilder;
+    @Autowired
+    UserService uService;
 
     public CallbackController(AppConfig config) {
         this.redirectOnFail = "/";
@@ -50,12 +53,12 @@ public class CallbackController {
     }
 
     @RequestMapping(value = "/callback", method = RequestMethod.GET)
-    protected void getCallback(final HttpServletRequest req, final HttpServletResponse res) throws ServletException, IOException, UnirestException {
+    protected void getCallback(final HttpServletRequest req, final HttpServletResponse res) throws IOException, UnirestException {
         handle(req, res);
     }
 
     @RequestMapping(value = "/callback", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    protected void postCallback(final HttpServletRequest req, final HttpServletResponse res) throws ServletException, IOException, UnirestException {
+    protected void postCallback(final HttpServletRequest req, final HttpServletResponse res) throws IOException, UnirestException {
         handle(req, res);
     }
 
@@ -64,16 +67,11 @@ public class CallbackController {
 
             Tokens tokens = controller.handle(req);
             SessionUtils.set(req, "accessToken", tokens.getAccessToken());
-
-            // SQL ami megnezi, hogy van-e ilyen user.
-            // Ha van, megszerzi a User objectjet
-            // SessionUtils.set(req, "user", trlfgbfgbfgb);
-            // Ha nincs ilyen user atiranyitom a new user oldalra.
+            SessionUtils.set(req, "idToken", tokens.getIdToken());
 
             AuthAPI auth = new AuthAPI(config.getDomain(), config.getClientId(), config.getClientSecret());
             Request<UserInfo> request = auth.userInfo(tokens.getAccessToken());
             RestTemplate template = restTemplateBuilder.build();
-
             UserInfo info = request.execute();
             String clientId = (String)info.getValues().get("sub");
             String url = "https://svalley.auth0.com/api/v2/users/" + clientId;
@@ -88,14 +86,15 @@ public class CallbackController {
             HttpHeaders headers = new HttpHeaders();
             headers.set("Authorization", "Bearer " + response.toString());
             HttpEntity entity = new HttpEntity(headers);
-            ResponseEntity<HashMap> exchange = template.exchange(url, HttpMethod.GET, entity, HashMap.class);
-            System.out.println(exchange.getBody());
-            System.out.println(exchange.toString());
-            System.out.println(exchange.getBody().get("email"));
+            ResponseEntity<HashMap> userData = template.exchange(url, HttpMethod.GET, entity, HashMap.class);
+            System.out.println(userData.getBody());
 
+            uService.createUser(userData);
 
             res.sendRedirect(redirectOnSuccess);
-        } catch (IdentityVerificationException e) {
+        }
+
+        catch (IdentityVerificationException e) {
             e.printStackTrace();
             res.sendRedirect(redirectOnFail);
         }

@@ -20,7 +20,7 @@ public class LoginController {
     @GetMapping(value = "/")
     protected String login(final HttpServletRequest req) {
 
-        if (SessionUtils.get(req, "accessToken") != null) {
+        if (SessionUtils.get(req, "idToken") != null) {
             return "redirect:/home";
         }
 

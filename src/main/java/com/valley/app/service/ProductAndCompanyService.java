@@ -16,6 +16,8 @@ public class ProductAndCompanyService {
     ProductRepository pRepo;
 
     public void createDatabase() {
+        if(coRepo.findAll().size() >= 5 && pRepo.findAll().size() >= 3) return;
+
         Company apple = new Company("Apple", "Steve Jobs and Steve Wozniak...", 1976, null);
         Company microsoft = new Company("Microsoft", "Windows and blabla...", 1976, null);
         Company facebook = new Company("Facebook", "Mark Zuckerberg revolutionary idea based on...", 2008, null);

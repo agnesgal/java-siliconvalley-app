@@ -1,6 +1,7 @@
 package com.valley.app.config;
 
 
+import com.valley.app.repository.CompanyRepository;
 import com.valley.app.service.ProductAndCompanyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,4 +24,5 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
         dbDataService.createDatabase();
         logger.info("Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.", Arrays.toString(args));
     }
+
 }
