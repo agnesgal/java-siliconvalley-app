@@ -1,6 +1,24 @@
- $.ajax({
-    url:
-        "https://newsapi.org/v2/everything?q=silicon&from=2018-11-06&sortBy=popularity&apiKey=c1de183520fa4c1d9955791d4593104f",
+function dailyDate(dateIn) {
+    var yyyy = dateIn.getFullYear();
+    var mm = dateIn.getMonth() + 1;
+    var dd  = dateIn.getDate();
+    return String(yyyy + "-" + mm + "-" + dd);
+}
+
+function minusDaysDate(dateIn) {
+    var yyyy = dateIn.getFullYear();
+    var mm = dateIn.getMonth() + 1;
+    var dd  = dateIn.getDate() - 5;
+    return String(yyyy + "-" + mm + "-" + dd);
+}
+
+var today = new Date();
+var minusDay = new Date();
+
+var url = "https://newsapi.org/v2/everything?q=silicon&from=" + minusDaysDate(minusDay) +"&to=" + dailyDate(today) + "&sortBy=publishedAt&apiKey=c1de183520fa4c1d9955791d4593104f";
+
+$.ajax({
+    url: url,
     method: "GET",
     error: function() {
         console.log("Sry: Error with the data");
@@ -23,6 +41,10 @@ function processData(data) {
         var artUrl = data.articles[i].url;
 
         if (artUrl.substr(-1) == '/') artUrl = artUrl.replace(/\/$/, '');
+        
+        if (urlToImage == null || urlToImage == "" || urlToImage.charAt(0) == '/') urlToImage = "https://techtalk.vn/wp-content/uploads/2017/08/silicon-valley.jpg";
+
+        if (author == null) author = "Anonym";
 
         var $author = $('<div class="author">Author: ' + author + "</div >");
 
