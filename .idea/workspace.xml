@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9081dd0a-8e69-4b3a-b02b-79f2ffe4d034" name="Default" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/012ce34d-920a-4213-b2e6-52de05333d90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/012ce34d-920a-4213-b2e6-52de05333d90.xml" afterDir="false" />
@@ -24,6 +25,11 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/valley/app/controller/IndexController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/valley/app/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/service/ProductAndCompanyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/valley/app/service/ProductAndCompanyService.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/valley/app/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/controller/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/valley/app/service/ProductAndCompanyService.class" beforeDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,6 +54,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
+<<<<<<< Updated upstream
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -98,6 +105,9 @@
         <item name="usr: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
       </path>
     </expand>
+=======
+    <expand />
+>>>>>>> Stashed changes
     <select />
   </component>
   <component name="FileEditorManager">
@@ -105,6 +115,7 @@
       <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/controller/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="165">
               <caret line="22" column="43" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="43" />
             </state>
@@ -125,6 +136,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+            <state relative-caret-position="315">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -132,15 +147,21 @@
       <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/security/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="375">
               <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="-954">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="CallbackController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/security/CallbackController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,6 +181,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3746" />
           </provider>
+=======
+      <file leaf-file-name="news.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/news.js">
+          <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> Stashed changes
         </entry>
       </file>
       <file leaf-file-name="news.js" pinned="false" current-in-tab="false">
@@ -268,6 +294,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< Updated upstream
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -275,6 +302,8 @@
       </MavenImportingSettings>
     </option>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="MavenProjectNavigator">
     <treeState>
       <expand>
@@ -286,7 +315,11 @@
       <select />
     </treeState>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectFrameBounds" extendedState="6">
+=======
+  <component name="ProjectFrameBounds">
+>>>>>>> Stashed changes
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="810" />
@@ -335,18 +368,38 @@
               <item name="svalley" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="svalley" type="b2602c69:ProjectViewProjectNode" />
               <item name="svalley" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="svalley" type="b2602c69:ProjectViewProjectNode" />
+=======
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svalley" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svalley" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svalley" type="b2602c69:ProjectViewProjectNode" />
+>>>>>>> Stashed changes
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
@@ -485,6 +538,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="122971000" />
   </component>
   <component name="TodoView">
@@ -495,6 +549,9 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+=======
+    <option name="totallyTimeSpent" value="46004000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="6" />
@@ -529,6 +586,7 @@
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info id="Favorites" order="9" side_tool="true" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="28" weight="0.26928473" />
@@ -544,6 +602,50 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Spring" order="15" weight="0.32957748" />
       <window_info id="Image Layers" order="4" />
+=======
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1795422" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Problems" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32587412" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.36478874" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.2453505" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.27412587" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="2" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.27412587" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -571,9 +673,15 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Bean Validation" order="7" />
       <window_info anchor="bottom" id="Run Dashboard" order="12" weight="0.4403927" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.44722223" />
+>>>>>>> Stashed changes
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,10 +791,17 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -783,6 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1050">
           <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
           <folding>
@@ -791,6 +907,10 @@
             <element signature="e#769#770#0" expanded="true" />
             <element signature="e#803#804#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="315">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -824,6 +944,18 @@
     </entry>
     <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+=======
+        <state relative-caret-position="120">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
@@ -836,6 +968,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/company">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/company">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -875,55 +1057,28 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
+=======
+    <entry file="das://012ce34d-920a-4213-b2e6-52de05333d90/database/svalley/schema/public/table/company.sql" />
+    <entry file="das://012ce34d-920a-4213-b2e6-52de05333d90/database/svalley/schema/public/table/company" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/repository/CompanyRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr.sql">
+    <entry file="das://012ce34d-920a-4213-b2e6-52de05333d90/database/svalley/schema/public/table/product" />
+    <entry file="das://012ce34d-920a-4213-b2e6-52de05333d90/database/svalley/schema/public/table/product.sql" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/config/Inisializer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/config/AppStartupRunner.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/model/Company.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/usr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/company">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://6872cdae-5177-42b7-8254-514907bff5b8/database/svalley/schema/public/table/company">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="257">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -993,6 +1148,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1001,6 +1157,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/security/Auth0Filter.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/model/User.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
@@ -1014,6 +1173,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1021,6 +1181,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3746" />
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/news.js">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> Stashed changes
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/news.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1032,6 +1196,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/security/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1039,6 +1204,19 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/valley/app/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-954">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
