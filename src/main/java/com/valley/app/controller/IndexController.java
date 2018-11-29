@@ -30,8 +30,8 @@ public class IndexController {
         return "company";
     }
 
-    @GetMapping("/design")
-    public String design() throws IOException {
-        return "design";
-    }
+//    @GetMapping("/design")
+//    public String design() throws IOException {
+//        return "design";
+//    }
 }

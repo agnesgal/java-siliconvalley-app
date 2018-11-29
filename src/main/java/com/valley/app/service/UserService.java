@@ -16,10 +16,9 @@ public class UserService  {
 
     @Autowired
     UserRepository uRepo;
+    private User ourUser;
 
     public void createUser(ResponseEntity<HashMap> userData) {
-        List<String> dataToShow = new ArrayList<>();
-
         String usrStringId = userData.getBody().get("user_id").toString().substring(14, 34).trim();
         String email = (String)userData.getBody().get("email");
         String given_name = (String)userData.getBody().get("given_name");
@@ -28,12 +27,14 @@ public class UserService  {
         String name = (String)userData.getBody().get("name");
         String picture = (String)userData.getBody().get("picture");
         String updated_at = (String)userData.getBody().get("updated_at");
+        ourUser = new User(usrStringId, email, given_name, family_name, nickname, name, picture, updated_at);
 
         if(uRepo.findByUsrId(usrStringId) == null) {
-            User newUser = new User(usrStringId, email, given_name, family_name, nickname, name, picture, updated_at);
-            uRepo.save(newUser);
+            uRepo.save(ourUser);
         }
-
     }
 
+    public User getOurUser() {
+        return ourUser;
+    }
 }
