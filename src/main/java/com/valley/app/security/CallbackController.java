@@ -4,16 +4,8 @@ import com.auth0.IdentityVerificationException;
 import com.auth0.SessionUtils;
 import com.auth0.Tokens;
 import com.auth0.client.auth.AuthAPI;
-import com.auth0.client.auth.AuthorizeUrlBuilder;
-import com.auth0.exception.APIException;
-import com.auth0.exception.Auth0Exception;
-import com.auth0.json.auth.TokenHolder;
 import com.auth0.json.auth.UserInfo;
-import com.auth0.net.CustomRequest;
 import com.auth0.net.Request;
-import com.auth0.utils.Asserts;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.valley.app.service.UserService;
@@ -25,11 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 
 @SuppressWarnings("unused")
@@ -64,7 +54,6 @@ public class CallbackController {
 
     private void handle(HttpServletRequest req, HttpServletResponse res) throws IOException, UnirestException {
         try {
-
             Tokens tokens = controller.handle(req);
             SessionUtils.set(req, "accessToken", tokens.getAccessToken());
             SessionUtils.set(req, "idToken", tokens.getIdToken());
@@ -87,8 +76,6 @@ public class CallbackController {
             headers.set("Authorization", "Bearer " + response.toString());
             HttpEntity entity = new HttpEntity(headers);
             ResponseEntity<HashMap> userData = template.exchange(url, HttpMethod.GET, entity, HashMap.class);
-            System.out.println(userData.getBody());
-
             uService.createUser(userData);
 
             res.sendRedirect(redirectOnSuccess);
