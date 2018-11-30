@@ -40,8 +40,11 @@ public class HomeController {
             mapModel.put("userId", idToken);
         }
 
-        String name = uService.getOurUser().getName();
-        model.addAttribute("name", name);
+        if(uService.getOurUser().getName() != null) {
+            String name = uService.getOurUser().getName();
+            model.addAttribute("name", name);
+        }
+        else model.addAttribute("name", "here!");
 
         return "index";
     }

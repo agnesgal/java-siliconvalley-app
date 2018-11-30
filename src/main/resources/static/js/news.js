@@ -47,10 +47,9 @@ function processData(data) {
 
         if (author == null) author = "Anonym";
 
+        var $source = $('<div class="source"><strong>' + source + "</strong></div >");
 
-        var $source = $('<div class="source">Source: ' + source + "</div >");
-
-        var $author = $('<div class="author">Author: ' + author + "</div >");
+        var $author = $('<span class="author">Author: ' + author + "</span >");
 
         var $title = $('<div class="title">' + title + "</div>");
 
@@ -61,7 +60,7 @@ function processData(data) {
         var $description = $('<div class="description">' + description + "</div >");
 
         var $clickImg = $(
-            "<a class=clickImg href=" + artUrl + '><img width="50" src="https://static.thenounproject.com/png/962936-200.png"></a>"'
+            "<a class=clickIco href=" + artUrl + '><i class="ion-ios-redo"></i></a>"'
         );
 
         $(".newsFeed").append($source, $author, $title, $urlToImage, $description, $clickImg);
