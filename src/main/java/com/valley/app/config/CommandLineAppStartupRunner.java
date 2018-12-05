@@ -22,7 +22,7 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
     @Override
     public void run(String...args) throws Exception {
         dbDataService.createDatabase();
-        logger.info("Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.", Arrays.toString(args));
+        logger.info("Application started with command-line arguments: {} . \n To kill this application click on the stop button.", Arrays.toString(args));
     }
 
 }

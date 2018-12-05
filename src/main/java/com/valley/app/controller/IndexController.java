@@ -30,4 +30,9 @@ public class IndexController {
         return "company";
     }
 
+    @GetMapping("/design")
+    public String designPage() {
+        return "desing";
+    }
+
 }
