@@ -42,7 +42,10 @@ public class HomeController {
 
         if(uService.getOurUser().getName() != null) {
             String name = uService.getOurUser().getName();
+            String picture = uService.getOurUser().getPicture();
+
             model.addAttribute("name", name);
+            model.addAttribute("picture", picture);
         }
         else model.addAttribute("name", "here!");
 
