@@ -18,11 +18,11 @@ public class ProductAndCompanyService {
     public void createDatabase() {
         if(coRepo.findAll().size() >= 5 && pRepo.findAll().size() >= 3) return;
 
-        Company apple = new Company("Apple", "Steve Jobs and Steve Wozniak...", 1976, null);
-        Company microsoft = new Company("Microsoft", "Windows and blabla...", 1976, null);
-        Company facebook = new Company("Facebook", "Mark Zuckerberg revolutionary idea based on...", 2008, null);
-        Company asus = new Company("Asus", "Repuclib", 2008, null);
-        Company lenovo = new Company("Lenovo", "Something revolutainry here as well", 1995, null);
+        Company apple = new Company("Apple", "/img/portfolio/apple.png", "Steve Jobs and Steve Wozniak...", 1976, true, null);
+        Company microsoft = new Company("Microsoft", "/img/portfolio/microsoft.png", "Windows and blabla...", 1976, true, null);
+        Company facebook = new Company("Facebook", "/img/portfolio/facebook.png", "Mark Zuckerberg revolutionary idea based on...", 2008, true, null);
+        Company asus = new Company("Asus", "/img/portfolio/asus.png", "Repuclib", 2008, false, null);
+        Company lenovo = new Company("Lenovo", "/img/portfolio/lenovo.png", "Something revolutainry here as well", 1995, false, null);
 
         coRepo.save(apple);
         coRepo.save(microsoft);

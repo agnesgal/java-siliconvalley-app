@@ -4,6 +4,7 @@ import com.auth0.SessionUtils;
 import com.valley.app.model.Company;
 import com.valley.app.repository.CompanyRepository;
 import com.valley.app.repository.UserRepository;
+import com.valley.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,13 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class IndexController {
+public class CompanyController {
 
     @Autowired
     CompanyRepository coRepo;
+
+    @Autowired
+    UserService uService;
 
     @GetMapping("/company")
     public String companiesView(Model model, final HttpServletRequest req) throws IOException {
@@ -25,14 +30,24 @@ public class IndexController {
             return "redirect:/";
         }
         List<Company> companyList = coRepo.findAll();
+        List<Company> siliconCompList = new ArrayList<>();
+        List<Company> wWideCompList = new ArrayList<>();
 
-        model.addAttribute("companies", companyList);
+        for (Company comp : companyList) {
+            if(comp.isSilicon()) siliconCompList.add(comp);
+            else wWideCompList.add(comp);
+        }
+
+        model.addAttribute("siliconComps", siliconCompList);
+        model.addAttribute("wWideComps", wWideCompList);
+
+        String name = uService.getOurUser().getName();
+        String picture = uService.getOurUser().getPicture();
+
+        model.addAttribute("name", name);
+        model.addAttribute("picture", picture);
+
         return "company";
-    }
-
-    @GetMapping("/design")
-    public String designPage() {
-        return "desing";
     }
 
 }

@@ -16,10 +16,16 @@ public class Company {
     private String name;
 
     @Column(nullable = false)
+    private String logo;
+
+    @Column(nullable = false)
     private String description;
 
     @Column(nullable = false)
     private int foundationYear;
+
+    @Column(nullable = false)
+    private boolean isSilicon;
 
     @OneToMany(mappedBy = "company")
     private List<Product> productList;
@@ -40,6 +46,14 @@ public class Company {
         this.name = name;
     }
 
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -56,6 +70,14 @@ public class Company {
         this.foundationYear = foundationYear;
     }
 
+    public boolean isSilicon() {
+        return isSilicon;
+    }
+
+    public void setSilicon(boolean silicon) {
+        isSilicon = silicon;
+    }
+
     public List<Product> getProductList() {
         return productList;
     }
@@ -67,10 +89,12 @@ public class Company {
     public Company() {
     }
 
-    public Company(String name, String description, int foundationYear, List<Product> productList) {
+    public Company(String name, String logo, String description, int foundationYear, boolean isSilicon, List<Product> productList) {
         this.name = name;
+        this.logo = logo;
         this.description = description;
         this.foundationYear = foundationYear;
+        this.isSilicon = isSilicon;
         this.productList = productList;
     }
 }
