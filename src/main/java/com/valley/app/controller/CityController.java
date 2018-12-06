@@ -17,9 +17,9 @@ public class CityController {
 
     @GetMapping("/city")
     public String companiesView(Model model, final HttpServletRequest req) throws IOException {
-//        if (SessionUtils.get(req, "accessToken") == null) { // not logged in
-//            return "redirect:/";
-//        }
+        if (SessionUtils.get(req, "accessToken") == null) { // not logged in
+            return "redirect:/";
+        }
 //        String name = uService.getOurUser().getName();
 //        String picture = uService.getOurUser().getPicture();
 //
