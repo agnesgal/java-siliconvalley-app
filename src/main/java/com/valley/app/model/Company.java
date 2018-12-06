@@ -18,7 +18,7 @@ public class Company {
     @Column(nullable = false)
     private String logo;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition="TEXT")
     private String description;
 
     @Column(nullable = false)
@@ -26,6 +26,9 @@ public class Company {
 
     @Column(nullable = false)
     private boolean isSilicon;
+
+    @Column(nullable = false)
+    private String background;
 
     @OneToMany(mappedBy = "company")
     private List<Product> productList;
@@ -78,6 +81,14 @@ public class Company {
         isSilicon = silicon;
     }
 
+    public String getBackground() {
+        return background;
+    }
+
+    public void setBackground(String background) {
+        this.background = background;
+    }
+
     public List<Product> getProductList() {
         return productList;
     }
@@ -89,12 +100,13 @@ public class Company {
     public Company() {
     }
 
-    public Company(String name, String logo, String description, int foundationYear, boolean isSilicon, List<Product> productList) {
+    public Company(String name, String logo, String description, int foundationYear, boolean isSilicon, String background, List<Product> productList) {
         this.name = name;
         this.logo = logo;
         this.description = description;
         this.foundationYear = foundationYear;
         this.isSilicon = isSilicon;
+        this.background = background;
         this.productList = productList;
     }
 }

@@ -14,6 +14,9 @@ public class Product {
     private String name;
 
     @Column(nullable = false)
+    private String logo;
+
+    @Column(nullable = false)
     private String description;
 
     @Column(nullable = false)
@@ -36,6 +39,14 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public String getDescription() {
@@ -65,8 +76,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String description, int year, Company company) {
+    public Product(String name, String logo, String description, int year, Company company) {
         this.name = name;
+        this.logo = logo;
         this.description = description;
         this.year = year;
         this.company = company;

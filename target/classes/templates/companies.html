@@ -93,8 +93,8 @@
                 <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
                 <ul class="nav-menu list-unstyled">
-                    <li><a href="#shHistory" class="smoothScroll">History</a></li>
-                    <li><a href="#prod" class="smoothScroll">Products</a></li>
+                    <li><a href="#siliComp" class="smoothScroll">Companies</a></li>
+                    <li><a href="#wide" class="smoothScroll">Worldwide</a></li>
                     <li><a href="/logout" class="smoothScroll">Logout</a></li>
                 </ul>
             </div>
@@ -103,12 +103,12 @@
     <!-- End section navbar -->
 
     <!-- start section header -->
-    <div id="header" class="home" th:style="'background-image:url(' + ${company.background} + ');'">
+    <div id="header" class="home" style="background-image: url(/img/portfolio/backg-comp.jpg)">
 
-    <div class="container">
+        <div class="container">
             <div class="header-content">
-                <h1 th:text="'What is '+ ${company.name} + '?'">Co. name</h1>
-                <p>Let me introduce you the company.</p>
+                <h1>Silicon Companies</h1>
+                <p>Get familiar with the valley companies and their products.</p>
                 <ul class="list-unstyled list-social">
                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                     <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -122,18 +122,18 @@
     <!-- start section about us -->
     <div id="journal" class="text-left paddsection">
 
-        <div id="shHistory" class="paddsection">
+        <div id="siliComp" class="paddsection">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="container">
                         <div class="section-title text-center">
-                            <h2>Short history</h2>
+                            <h2>Silicon Companies</h2>
                         </div>
                         <div class="row">
-                            <p th:text="'From '+ ${company.foundationYear}">Co. year</p>
-                        </div>
-                        <div class="row">
-                            <strong th:text="${company.description}">Co. name</strong>
+                            <div class="img__wrap" th:each="company : ${siliconComps}">
+                                <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
+                                <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,17 +141,18 @@
         </div>
     <!-- end section about us -->
 
-    <div class="container" id="prod">
+    <div class="container" id="wide">
         <div class="section-title text-center">
-            <h2>Products</h2>
+            <h2>Worldwidely</h2>
         </div>
-
         <div class="row">
-            <div class="img__wrap" th:each="prod : ${company.getProductList()}">
-                <img class="img-responsive" id="comp-logo" th:src="@{${prod.logo}}"/>
-                <strong class="img__description" th:text="${prod.name}">Prod. name</strong></a>
+            <div class="img__wrap" th:each="company : ${wWideComps}">
+                <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
+                <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
             </div>
         </div>
+
+    </div>
     </div>
 
     <!-- start section footer -->
@@ -180,6 +181,8 @@
     <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
     <script src="/lib/isotope/isotope.pkgd.min.js"></script>
+
+    <script src="/contactform/contactform.js"></script>
 
     <script src="/js/bootstrap.js"></script>
     <script src="/js/modal.js"></script>

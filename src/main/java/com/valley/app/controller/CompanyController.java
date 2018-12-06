@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -47,7 +48,22 @@ public class CompanyController {
         model.addAttribute("name", name);
         model.addAttribute("picture", picture);
 
-        return "company";
+        return "companies";
     }
 
+    @GetMapping("/company/{co_id}")
+    public String oneCompanyView(@PathVariable ("co_id") Long company_id, Model model, final HttpServletRequest req) throws IOException {
+        if (SessionUtils.get(req, "accessToken") == null) { // not logged in
+            return "redirect:/";
+        }
+        String name = uService.getOurUser().getName();
+        String picture = uService.getOurUser().getPicture();
+
+        model.addAttribute("name", name);
+        model.addAttribute("picture", picture);
+
+        Company company = coRepo.getOne(company_id);
+        model.addAttribute("company", company);
+        return "company";
+    }
 }

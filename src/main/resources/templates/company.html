@@ -42,7 +42,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/logo.jpg">
+    <link rel="shortcut icon" href="/img/logo.png">
 
 </head>
 
@@ -54,7 +54,7 @@
             <div class="container">
 
                 <div class="logo">
-                    <a href="/"><img src="/img/logo.jpg" alt="logo" class="smoothScroll"></a>
+                    <a href="/"><img src="/img/logo.png" alt="logo" class="smoothScroll"></a>
 
                     <ul class="nav-menu list-unstyled">
                         <li><a id="youWord" style="color: #0b0b0b">You</a></li>
@@ -93,8 +93,8 @@
                 <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
 
                 <ul class="nav-menu list-unstyled">
-                    <li><a href="#siliComp" class="smoothScroll">Companies</a></li>
-                    <li><a href="#wide" class="smoothScroll">Worldwide</a></li>
+                    <li><a href="#shHistory" class="smoothScroll">History</a></li>
+                    <li><a href="#prod" class="smoothScroll">Products</a></li>
                     <li><a href="/logout" class="smoothScroll">Logout</a></li>
                 </ul>
             </div>
@@ -103,12 +103,12 @@
     <!-- End section navbar -->
 
     <!-- start section header -->
-    <div id="header" class="home" style="background-image: url(http://everydayfeminism.com/wp-content/uploads/2015/11/iStock_000075210281_Medium.jpg)">
+    <div id="header" class="home" th:style="'background-image:url(' + ${company.background} + ');'">
 
-        <div class="container">
+    <div class="container">
             <div class="header-content">
-                <h1>Silicon Companies</h1>
-                <p>Get familiar with the valley companies and their products.</p>
+                <h1 th:text="'What is '+ ${company.name} + '?'">Co. name</h1>
+                <p>Let me introduce you the company.</p>
                 <ul class="list-unstyled list-social">
                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                     <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -122,18 +122,18 @@
     <!-- start section about us -->
     <div id="journal" class="text-left paddsection">
 
-        <div id="siliComp" class="paddsection">
+        <div id="shHistory" class="paddsection">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="container">
                         <div class="section-title text-center">
-                            <h2>Silicon Companies</h2>
+                            <h2>Short history</h2>
                         </div>
                         <div class="row">
-                            <div class="img__wrap" th:each="company : ${siliconComps}">
-                                <img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
-                                <strong class="img__description" th:text="${company.name}">Co. name</strong>
-                            </div>
+                            <p th:text="'From '+ ${company.foundationYear}">Co. year</p>
+                        </div>
+                        <div class="row">
+                            <strong th:text="${company.description}">Co. name</strong>
                         </div>
                     </div>
                 </div>
@@ -141,18 +141,17 @@
         </div>
     <!-- end section about us -->
 
-    <div class="container" id="wide">
+    <div class="container" id="prod">
         <div class="section-title text-center">
-            <h2>Worldwidely</h2>
-        </div>
-        <div class="row">
-            <div class="img__wrap" th:each="company : ${wWideComps}">
-                <img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
-                <strong class="img__description" th:text="${company.name}">Co. name</strong>
-            </div>
+            <h2>Products</h2>
         </div>
 
-    </div>
+        <div class="row">
+            <div class="img__wrap" th:each="prod : ${company.getProductList()}">
+                <img class="img-responsive" id="comp-logo" th:src="@{${prod.logo}}"/>
+                <strong class="img__description" th:text="${prod.name}">Prod. name</strong></a>
+            </div>
+        </div>
     </div>
 
     <!-- start section footer -->
@@ -182,10 +181,7 @@
     <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
     <script src="/lib/isotope/isotope.pkgd.min.js"></script>
 
-    <script src="/contactform/contactform.js"></script>
-
     <script src="/js/bootstrap.js"></script>
-    <script src="/js/news.js"></script>
     <script src="/js/modal.js"></script>
 
 </body>
