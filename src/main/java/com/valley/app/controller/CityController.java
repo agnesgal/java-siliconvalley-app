@@ -20,11 +20,11 @@ public class CityController {
         if (SessionUtils.get(req, "accessToken") == null) { // not logged in
             return "redirect:/";
         }
-//        String name = uService.getOurUser().getName();
-//        String picture = uService.getOurUser().getPicture();
-//
-//        model.addAttribute("name", name);
-//        model.addAttribute("picture", picture);
+        String name = uService.getOurUser().getName();
+        String picture = uService.getOurUser().getPicture();
+
+        model.addAttribute("name", name);
+        model.addAttribute("picture", picture);
 
         return "city";
     }

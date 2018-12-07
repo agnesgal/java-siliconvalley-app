@@ -1,11 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>Ez itt a varos.</p>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Silicon Valley - Where technology was born</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/hover/hover.min.css" rel="stylesheet">
+
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/modal.css" rel="stylesheet">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/logo.png">
+
+</head>
+
+<body>
+
+<!-- start section navbar -->
+    <nav id="main-nav">
+        <div class="row">
+            <div class="container">
+
+                <div class="logo">
+                    <a href="/"><img src="/img/logo.png" alt="logo" class="smoothScroll"></a>
+
+                    <ul class="nav-menu list-unstyled">
+                        <li><a id="youWord" style="color: #0b0b0b">You</a></li>
+                        <li><a href="/city" class="smoothScroll" style="color: #0b0b0b">City</a></li>
+                        <li><a href="/company" class="smoothScroll" style="color: #0b0b0b">Company</a></li>
+                    </ul>
+                </div>
+                <!--Modal section start-->
+
+                <div id="cartModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h4>Your profile:</h4>
+
+                        <img class="img-responsive" id="prof-pic" alt="me" th:src="@{${picture}}"/>
+                        <p th:text="'Hello '+ ${name} + '! Here you can find more information about your things.'"></p>
+
+                        <table>
+                            <tr>
+                                <th colspan="2">Favorites:</th>
+                            </tr>
+                            <tr>
+                                <th>Company</th>
+                                <th>Product</th>
+                            </tr>
+                            <tr>
+                                <td>None</td>
+                                <td>None</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <!--Modal section ends-->
+                <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+
+                <ul class="nav-menu list-unstyled">
+                    <li><a href="#shHistory" class="smoothScroll">History</a></li>
+                    <li><a href="#places" class="smoothScroll">Places</a></li>
+                    <li><a href="/logout" class="smoothScroll">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- End section navbar -->
+
+<!-- start section header -->
+    <div id="header" class="home" style="background-image: url(/img/backg-city.jpg)">
+
+        <div class="container">
+            <div class="header-content">
+                <h1>City tour</h1>
+                <p>Let me introduce you this wonderful city.</p>
+                <ul class="list-unstyled list-social">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- End section header -->
+
+<!-- start section about us -->
+    <div id="journal" class="text-left paddsection">
+
+        <div id="shHistory" class="paddsection">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="container">
+                        <div class="section-title text-center">
+                            <h2>Short history</h2>
+                        </div>
+                        <div class="row">
+                            <iframe src="//content.jwplatform.com/players/EpvyN79Q-puACk8ZV.html" width="560" height="320" frameborder="0" scrolling="auto"></iframe>
+                            <p>Silicon Valley is a name that is synonymous with the technology industry, but when and how did this small area of California become the center of the tech world? The area's transformation happened gradually, over a period of more than 100 years. Here's how.<br><br>
+                                Silicon Valley is an almost $3 trillion neighborhood thanks to companies like Apple, Google, and Tesla. But it wasn't always this way.<br><br>
+                                In the late 1800's, San Francisco's port helped make it a hub of the early telegraph and radio industries. In 1909, San José became home to one of the US's first radio stations. In 1933, the Navy purchased Moffett Field to dock and maintain the USS Macon. This made Moffett Field a major hub for the early days of the aerospace industry. Many scientists and researchers all found work in the area. In 1939, the Ames Research Center was founded in the area, and it became home to the world's largest wind tunnel in 1949.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end section about us -->
+
+        <div class="container" id="places">
+            <div class="section-title text-center">
+                <h2>Tripadvisor recommendation</h2>
+            </div>
+
+            <div class="row">
+                <p>Check back soon!</p>
+            </div>
+        </div>
+
+        <!-- start section footer -->
+        <div id="footer" class="text-center">
+            <div class="container">
+                <div class="socials-media text-center">
+
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <p>&copy; Copyrights Folio. All rights reserved.</p>
+
+            </div>
+        </div>
+    </div>
+    <!-- End section footer -->
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/typed/typed.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="/lib/isotope/isotope.pkgd.min.js"></script>
+
+    <script src="/contactform/contactform.js"></script>
+
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/modal.js"></script>
 </body>
-</html>
+
+</html></html>
