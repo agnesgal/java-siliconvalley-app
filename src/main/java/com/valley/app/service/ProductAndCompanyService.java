@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 public class ProductAndCompanyService {
 
     @Autowired
-    CompanyRepository coRepo;
+    CompanyRepository companyRepository;
     @Autowired
-    ProductRepository pRepo;
+    ProductRepository productRepository;
 
     public void createDatabase() {
-        if(coRepo.findAll().size() >= 5 && pRepo.findAll().size() >= 3) return;
+        if(companyRepository.findAll().size() != 0) return;
 
         Company apple = new Company("Apple", "/img/portfolio/apple.png", "It all started with three men - Steve Jobs, Steve Wozniak, and Mike Markkula - who together in the late 1970's designed and marketed the Apple II series of computers. It was the first commercially successful line of personal computers, and led to the Apple Lisa in 1983 - the first computer to use a mouse-driven GUI (graphical user interface). One year later, the Apple Macintosh was born (launched by one of the greatest ads of all time, 1984), and with it, the Apple legend began to grow.", 1976, true, "/img/portfolio/apple-backg.jpg", null);
         Company microsoft = new Company("Microsoft", "/img/portfolio/microsoft.png", "On this day in 1975, at a time when most Americans use typewriters, childhood friends Bill Gates and Paul Allen found Microsoft, a company that makes computer software. Originally based in Albuquerque, New Mexico, Microsoft relocated to Washington State in 1979 and eventually grew into a major multinational technology corporation. In 1987, the year after Microsoft went public, 31-year-old Gates became the world’s youngest billionaire.", 1975, true, "/img/portfolio/microsoft-backg.jpg", null);
@@ -39,20 +39,20 @@ public class ProductAndCompanyService {
         p4.setCompany(tesla);
         p5.setCompany(tesla);
 
-        coRepo.save(apple);
-        coRepo.save(microsoft);
-        coRepo.save(facebook);
-        coRepo.save(asus);
-        coRepo.save(lenovo);
-        coRepo.save(tesla);
-        coRepo.save(google);
-        coRepo.save(sony);
+        companyRepository.save(apple);
+        companyRepository.save(microsoft);
+        companyRepository.save(facebook);
+        companyRepository.save(asus);
+        companyRepository.save(lenovo);
+        companyRepository.save(tesla);
+        companyRepository.save(google);
+        companyRepository.save(sony);
 
-        pRepo.save(p1);
-        pRepo.save(p2);
-        pRepo.save(p3);
-        pRepo.save(p4);
-        pRepo.save(p5);
+        productRepository.save(p1);
+        productRepository.save(p2);
+        productRepository.save(p3);
+        productRepository.save(p4);
+        productRepository.save(p5);
     }
 
 }

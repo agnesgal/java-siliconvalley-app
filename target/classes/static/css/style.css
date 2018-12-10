@@ -86,13 +86,20 @@ a:hover, a:focus {
   width: 100px;
 }
 
-/*Iframe*/
+/*Video and map*/
 
 iframe {
   margin-left: auto;
   margin-right: auto;
 }
 
+#googleMap {
+  display:inline-block;
+  position:relative;
+  width:100%;
+  margin-left: 30px;
+  margin-top: 30px;
+}
 
 nav ul li a {
   padding: 2px 0 0 0;

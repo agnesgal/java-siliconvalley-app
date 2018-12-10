@@ -1,7 +1,6 @@
 package com.valley.app.security;
 
 import com.auth0.SessionUtils;
-
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +9,7 @@ import java.io.IOException;
 public class Auth0Filter implements Filter {
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
     }
 
     @Override
@@ -19,6 +18,7 @@ public class Auth0Filter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         String accessToken = (String) SessionUtils.get(req, "accessToken");
         String idToken = (String) SessionUtils.get(req, "idToken");
+
         if (accessToken == null && idToken == null) {
             res.sendRedirect("/");
             return;

@@ -1,18 +1,15 @@
 package com.valley.app.controller;
 
-import com.auth0.SessionUtils;
 import com.valley.app.model.Company;
 import com.valley.app.repository.CompanyRepository;
-import com.valley.app.repository.UserRepository;
 import com.valley.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import org.thymeleaf.exceptions.TemplateProcessingException;
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,17 +17,14 @@ import java.util.List;
 public class CompanyController {
 
     @Autowired
-    CompanyRepository coRepo;
+    CompanyRepository companyRepository;
 
     @Autowired
-    UserService uService;
+    UserService userService;
 
     @GetMapping("/company")
-    public String companiesView(Model model, final HttpServletRequest req) throws IOException {
-        if (SessionUtils.get(req, "accessToken") == null) { // not logged in
-            return "redirect:/";
-        }
-        List<Company> companyList = coRepo.findAll();
+    public String companiesView(Model model) {
+        List<Company> companyList = companyRepository.findAll();
         List<Company> siliconCompList = new ArrayList<>();
         List<Company> wWideCompList = new ArrayList<>();
 
@@ -42,8 +36,8 @@ public class CompanyController {
         model.addAttribute("siliconComps", siliconCompList);
         model.addAttribute("wWideComps", wWideCompList);
 
-        String name = uService.getOurUser().getName();
-        String picture = uService.getOurUser().getPicture();
+        String name = userService.getOurUser().getName();
+        String picture = userService.getOurUser().getPicture();
 
         model.addAttribute("name", name);
         model.addAttribute("picture", picture);
@@ -52,18 +46,24 @@ public class CompanyController {
     }
 
     @GetMapping("/company/{co_id}")
-    public String oneCompanyView(@PathVariable ("co_id") Long company_id, Model model, final HttpServletRequest req) throws IOException {
-        if (SessionUtils.get(req, "accessToken") == null) { // not logged in
-            return "redirect:/";
+    public String oneCompanyView(@PathVariable ("co_id") Long company_id, Model model) {
+        try {
+            String name = userService.getOurUser().getName();
+            String picture = userService.getOurUser().getPicture();
+
+            model.addAttribute("name", name);
+            model.addAttribute("picture", picture);
+
+            Company company = companyRepository.getOne(company_id);
+            model.addAttribute("company", company);
+
+            return "company";
         }
-        String name = uService.getOurUser().getName();
-        String picture = uService.getOurUser().getPicture();
+        catch (TemplateProcessingException|NumberFormatException|EntityNotFoundException ex) {
+            System.out.println("Expection appearance: " + ex);
+            return "companies";
+        }
 
-        model.addAttribute("name", name);
-        model.addAttribute("picture", picture);
-
-        Company company = coRepo.getOne(company_id);
-        model.addAttribute("company", company);
-        return "company";
     }
+
 }
