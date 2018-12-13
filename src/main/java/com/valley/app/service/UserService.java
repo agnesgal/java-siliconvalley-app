@@ -12,7 +12,7 @@ public class UserService  {
 
     @Autowired
     UserRepository uRepo;
-    
+
     private User ourUser;
 
     public void createUser(ResponseEntity<HashMap> userData) {
