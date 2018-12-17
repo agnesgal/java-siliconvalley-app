@@ -22,6 +22,9 @@ public class CompanyController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    CompanyAPIController companyAPIController;
+
     @GetMapping("/company")
     public String companiesView(Model model) {
         List<Company> companyList = companyRepository.findAll();
@@ -64,6 +67,13 @@ public class CompanyController {
             return "companies";
         }
 
+    }
+
+
+
+    @GetMapping("/vmi")
+    public String vmdsviwe() {
+        return "vmi";
     }
 
 }
