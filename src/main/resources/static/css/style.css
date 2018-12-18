@@ -82,6 +82,10 @@ a:hover, a:focus {
   opacity: 1;
 }
 
+#searchBox {
+    flex-wrap: inherit;
+}
+
 #comp-logo {
   width: 100px;
 }

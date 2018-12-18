@@ -35,20 +35,32 @@
                 var url = "company/search/" + name;
 
                 try{
-                    document.getElementById('searchedCo').innerHTML="";
+                    document.getElementById('searchBox').innerHTML="";
                     request.onreadystatechange = function() {
                         if(request.readyState == 4) {
                             var val = request.responseText;
                             var jsonResponse = JSON.parse(request.response);
 
-                            document.getElementById('mylocation').innerHTML = val;
-
                             for(i = 0; i < jsonResponse.length; i++) {
-                                var src = document.getElementById("searchedCo");
+                                var searchBox = document.getElementById("searchBox");
+
+                                var wrap = document.createElement('div');
+                                var link = document.createElement("a");
                                 var img = document.createElement("img");
-                                img.setAttribute('width', '100px');
+                                var name = document.createElement("strong");
+
+                                link.href = "company/" + jsonResponse[i].id;
                                 img.src = jsonResponse[i].logo;
-                                src.appendChild(img);
+                                name.textContent = jsonResponse[i].name;
+
+                                wrap.setAttribute('class', 'img__wrap');
+                                img.setAttribute('width', '100px');
+                                name.setAttribute('class', 'img__description');
+
+                                searchBox.appendChild(wrap);
+                                wrap.appendChild(link);
+                                link.appendChild(img);
+                                link.appendChild(name);
                             }
 
                             }
@@ -142,21 +154,24 @@
     <!-- End section header -->
 
     <!--Search bar-->
-    <h1>Search Company</h1>
-    <form name="vinform">
-        <input type="text" name="name" onkeyup="searchInfo()">
-    </form>
-
-    <div id="searchedCo" style="width:100px">
-        <h2>Vmi</h2>
-    </div>
-
-    <span id="mylocation"></span>
-
-    <!-- start section about us -->
     <div id="journal" class="text-left paddsection">
 
-        <div id="siliComp" class="paddsection">
+        <div class="container">
+            <div class="section-title text-center">
+
+                <h2>Search Company</h2>
+
+                <form name="vinform">
+                    <input type="text" name="name" onkeyup="searchInfo()">
+                </form>
+
+                <div id="searchBox" style="width:100px" class="row"></div>
+            </div>
+        </div>
+
+    <!-- start section about us -->
+
+        <div id="siliComp">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="container">
@@ -175,18 +190,18 @@
         </div>
     <!-- end section about us -->
 
-    <div class="container" id="wide">
-        <div class="section-title text-center">
-            <h2>Worldwide</h2>
-        </div>
-        <div class="row">
-            <div class="img__wrap" th:each="company : ${wWideComps}">
-                <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
-                <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
+        <div class="container" id="wide">
+            <div class="section-title text-center">
+                <h2>Worldwide</h2>
             </div>
-        </div>
+            <div class="row">
+                <div class="img__wrap" th:each="company : ${wWideComps}">
+                    <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
+                    <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
+                </div>
+            </div>
 
-    </div>
+        </div>
     </div>
 
     <!-- start section footer -->
