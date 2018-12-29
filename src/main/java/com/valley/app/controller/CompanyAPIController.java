@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @RestController
@@ -19,15 +20,15 @@ public class CompanyAPIController {
     CompanyRepository companyRepository;
 
     @GetMapping("/company/search/{co_name}")
-    public List<CompanyView> getCompanyLogoByName(@PathVariable("co_name") String company_name) {
-        List<Company> companyList = new ArrayList<>();
+    public List<CompanyView> getCompanyLogoByName(@PathVariable("co_name") String searchedLetter) {
+        String upperSearchedCo = searchedLetter.substring(0, 1).toUpperCase() + searchedLetter.substring(1).toLowerCase();
 
-        if (company_name.length() >= 1) {
-            String upperFirstName = company_name.substring(0, 1).toUpperCase() + company_name.substring(1).toLowerCase();
-            companyList = companyRepository.findByNameContaining(upperFirstName);
-            List<Company> tempCoList = companyRepository.findByNameContaining(company_name);
-            companyList.addAll(tempCoList);
-        }
+        List<Company> companyList = companyRepository.findByNameContaining(upperSearchedCo);
+        List<Company> tempCoList = companyRepository.findByNameContaining(searchedLetter);
+        companyList.addAll(tempCoList);
+
+        HashSet<Object> seen = new HashSet<>();
+        companyList.removeIf(e->!seen.add(e.getId()));
 
         List<CompanyView> toReturn = new ArrayList<>();
         for (Company co : companyList) {

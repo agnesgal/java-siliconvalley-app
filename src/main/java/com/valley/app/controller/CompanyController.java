@@ -69,11 +69,4 @@ public class CompanyController {
 
     }
 
-
-
-    @GetMapping("/vmi")
-    public String vmdsviwe() {
-        return "vmi";
-    }
-
 }

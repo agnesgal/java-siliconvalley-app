@@ -63,7 +63,7 @@
                                 link.appendChild(name);
                             }
 
-                            }
+                        }
                         else {
                             console.log("something is wrong " + request.readyState);
                         }
@@ -137,7 +137,7 @@
     <!-- End section navbar -->
 
     <!-- start section header -->
-    <div id="header" class="home" style="background-image: url(/img/portfolio/backg-comp.jpg)">
+    <div id="header" class="home" style="background-image: url(/img/backg-comp.jpg)">
 
         <div class="container">
             <div class="header-content">
@@ -165,19 +165,17 @@
                     <input type="text" name="name" onkeyup="searchInfo()">
                 </form>
 
-                <div id="searchBox" style="width:100px" class="row"></div>
+                <div id="searchBox" class="row"></div>
             </div>
         </div>
 
     <!-- start section about us -->
 
         <div id="siliComp">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <h2>Silicon Companies</h2>
-                        </div>
+            <div class="row justify-content-between">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <h2>Silicon Companies</h2>
                         <div class="row">
                             <div class="img__wrap" th:each="company : ${siliconComps}">
                                 <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
@@ -187,20 +185,19 @@
                     </div>
                 </div>
             </div>
-        </div>
     <!-- end section about us -->
 
-        <div class="container" id="wide">
-            <div class="section-title text-center">
-                <h2>Worldwide</h2>
-            </div>
-            <div class="row">
-                <div class="img__wrap" th:each="company : ${wWideComps}">
-                    <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
-                    <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
+            <div class="container" id="wide">
+                <div class="section-title text-center">
+                    <h2>Worldwide</h2>
+                    <div class="row">
+                        <div class="img__wrap" th:each="company : ${wWideComps}">
+                            <a th:href="@{'/company/' + ${company.id}}"><img class="img-responsive" id="comp-logo" th:src="@{${company.logo}}"/>
+                            <strong class="img__description" th:text="${company.name}">Co. name</strong></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 

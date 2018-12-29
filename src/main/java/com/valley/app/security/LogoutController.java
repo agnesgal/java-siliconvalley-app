@@ -36,8 +36,6 @@ public class LogoutController {
         if (request.getSession() != null) {
             SessionUtils.set(request, "idToken", null);
             request.getSession().invalidate();
-
-
         }
     }
 

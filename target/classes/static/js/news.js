@@ -17,6 +17,8 @@ var minusDay = new Date();
 
 var url = "https://newsapi.org/v2/everything?q=silicon&from=" + minusDaysDate(minusDay) +"&to=" + dailyDate(today) + "&sortBy=popularityt&apiKey=c1de183520fa4c1d9955791d4593104f";
 
+var pages = 0;
+
 $.ajax({
     url: url,
     method: "GET",
@@ -24,28 +26,29 @@ $.ajax({
         console.log("Sry: Error with the data");
     },
     success: function(data) {
-        processData(data);
+		processData(data, pages);
     }
 });
 
-function processData(data) {
+function processData(data, pages) {
     var articleItems = [];
 
-    for (var i = 0; i < data.articles.length; i++) {
+    for (var i = pages; i < pages + 4; i++) {
         var source = data.articles[i].source.name;
         var author = data.articles[i].author;
         var title = data.articles[i].title;
-        var description = data.articles[i].description;
+        var description = data.articles[i].description.substring(0, 180) + "...";
         var urlToImage = data.articles[i].urlToImage;
         var publishedAt = data.articles[i].publishedAt; //todo
         var content = data.articles[i].content; //todo
         var artUrl = data.articles[i].url;
 
         if (artUrl.substr(-1) == '/') artUrl = artUrl.replace(/\/$/, '');
-
-        if (urlToImage == null || urlToImage == "" || urlToImage.charAt(0) == '/') urlToImage = "https://techtalk.vn/wp-content/uploads/2017/08/silicon-valley.jpg";
-
+        if (urlToImage == null || urlToImage == "" || urlToImage.charAt(0) == '/') urlToImage = "/img/default-art-pic.jpg";
         if (author == null) author = "Anonym";
+        if(description == null) description = "Click on to read further!";
+
+        var $containerDiv = $('<div class="floatDiv"></div>');
 
         var $source = $('<div class="source"><strong>' + source + "</strong></div >");
 
@@ -54,7 +57,7 @@ function processData(data) {
         var $title = $('<div class="title">' + title + "</div>");
 
         var $urlToImage = $(
-            "<div class=urlToImage><img width='450px' src=" + urlToImage + "></div>" //kellene masik meret ide
+            "<div class=urlToImage><img width='350px' height='190px' src=" + urlToImage + "></div>" //kellene masik meret ide
         );
 
         var $description = $('<div class="description">' + description + "</div >");
@@ -63,7 +66,77 @@ function processData(data) {
             "<a class=clickIco href=" + artUrl + '><i class="ion-ios-redo"></i></a>"'
         );
 
-        $(".newsFeed").append($source, $author, $title, $urlToImage, $description, $clickImg);
-        console.log(artUrl);
+        var $span = $('<span id="span' + i + '"></span>');
+
+        if(i % 2 == 0){
+            $(".newsFeed").append($span);
+            $span.append($containerDiv);
+            $containerDiv.append($source, $author, $title, $urlToImage, $description, $clickImg);
+
+        } else {
+            $("#span" + (i - 1)).append($containerDiv);
+            $containerDiv.append($source, $author, $title, $urlToImage, $description, $clickImg);
+
+        }
+		
     }
+    if (!(pages > 3)){
+        $(".newsArrows").empty();
+        var $arrows = $('<i class="ion-ios-arrow-forward" onclick="clickForward()"></i>');
+        $(".newsArrows").append($arrows);
+    } else {
+        addArrows();
+    }
+    
+
+    
+}
+
+function addArrows() {
+    $(".newsArrows").empty();
+
+    var $arrows = $('<i class="ion-ios-arrow-back" onclick="clickBack()"></i><i class="ion-ios-arrow-forward" onclick="clickForward()"></i>');
+
+    $(".newsArrows").append($arrows);
+} 
+
+function clickForward() {
+    $('.newsFeed').empty();
+    $('.newsArrow').empty();
+
+	pages = pages + 4;
+
+    //kitorli a tartalmat es nem rak oda semmit, ha lenti ajax lefut akkor rosszul tolti egymasra
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        error: function() {
+            console.log("Sry: Error with the data");
+        },
+        success: function(data) {
+            processData(data, pages);
+        }
+    });
+    $(location).attr('href', "#journal");
+}
+
+function clickBack() {
+    $('.newsFeed').empty();
+    $('.newsArrow').empty();
+
+	pages = pages - 4;
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        error: function() {
+            console.log("Sry: Error with the data");
+        },
+        success: function(data) {
+            processData(data, pages);
+        }
+    });
+    $(location).attr('href', "#journal");
+
 }

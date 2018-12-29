@@ -34,14 +34,11 @@ public class HomeController {
             mapModel.put("userId", idToken);
         }
 
-        if(userService.getOurUser().getName() != null) {
-            String name = userService.getOurUser().getName();
-            String picture = userService.getOurUser().getPicture();
+        String name = userService.getOurUser().getName();
+        String picture = userService.getOurUser().getPicture();
 
-            model.addAttribute("name", name);
-            model.addAttribute("picture", picture);
-        }
-        else model.addAttribute("name", "here!");
+        model.addAttribute("name", name);
+        model.addAttribute("picture", picture);
 
         return "index";
     }
