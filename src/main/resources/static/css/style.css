@@ -31,6 +31,82 @@ h4 {
   font-weight: 600;
 }
 
+@media screen and (max-width: 1409px) {
+  iframe {
+    width: 600px;
+    height: 380px;
+  }
+  #contactPicture {
+    width: 188px;
+  }
+  .urlToImage {
+    width: 265px;
+  }
+}
+
+@media screen and (max-width: 1208px) {
+  iframe {
+    width: 550px;
+  }
+  #contactPicture {
+    width: 186px;
+  }
+  .urlToImage {
+    width: 255px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 1109px) {
+  iframe {
+    width: 400px;
+    height: 350px;
+  }
+  #contactPicture {
+    width: 156px;
+  }
+  .urlToImage {
+    width: 230px;
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 889px) {
+  iframe {
+    width: 130px;
+    height: 50px;
+  }
+  #contactPicture {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 803px) {
+  .newsLine {
+  display: grid;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  iframe {
+    width: 150px;
+    height: 70px;
+  }
+  #contactPicture {
+    width: 70%;
+  }
+  .urlToImage {
+    width: 230px;
+  }
+}
+
+@media screen and (max-width: 563px) {
+  .urlToImage {
+    width: 170px;
+  }
+}
+
 a {
   color: #292929;
   text-decoration: none !important;
@@ -49,7 +125,7 @@ a:hover {
   transition: all 0.5s ease-in-out 0s;
 }
 
-a:hover, a:focus {
+i:hover, i:focus {
   color: #777e88;
   text-decoration: underline;
 }
@@ -187,7 +263,7 @@ p {
 }
 
 .paddsection {
-  padding-top: 90px;
+  padding-top: 60px;
   padding-bottom: 90px;
 }
 
@@ -270,8 +346,8 @@ nav ul li a {
   color: #afafaf;
 }
 
-.ion-ios-redo {
-  zoom: 330%;
+.ion-arrow-right-a {
+  zoom: 295%;
 }
 
 .ion-ios-arrow-forward {
@@ -285,7 +361,7 @@ nav ul li a {
   padding: 22px;
 }
 
-.newsArrows:hover {
+.ion-ios-arrow-forward:hover .ion-ios-arrow-back:hover {
   color: #777e88;
 }
 

@@ -34,6 +34,11 @@ function processData(data, pages) {
     var articleItems = [];
 
     for (var i = pages; i < pages + 4; i++) {
+        if(data.articles.length >= pages) {
+            $(".newsArrows").empty();
+            var $arrows = $('<i class="ion-ios-arrow-back" onclick="clickBack()"></i>');
+            $(".newsArrows").append($arrows);
+        }
         var source = data.articles[i].source.name;
         var author = data.articles[i].author;
         var title = data.articles[i].title;
@@ -48,6 +53,7 @@ function processData(data, pages) {
         if (author == null) author = "Anonym";
         if(description == null) description = "Click on to read further!";
 
+
         var $containerDiv = $('<div class="floatDiv"></div>');
 
         var $source = $('<div class="source"><strong>' + source + "</strong></div >");
@@ -57,16 +63,16 @@ function processData(data, pages) {
         var $title = $('<div class="title">' + title + "</div>");
 
         var $urlToImage = $(
-            "<div class=urlToImage><img width='350px' height='190px' src=" + urlToImage + "></div>" //kellene masik meret ide
+            "<img class=urlToImage width='280px' height='110px' src=" + urlToImage + ">"
         );
 
         var $description = $('<div class="description">' + description + "</div >");
 
         var $clickImg = $(
-            "<a class=clickIco href=" + artUrl + '><i class="ion-ios-redo"></i></a>"'
+            "<a class=clickIco target='_blank' href=" + artUrl + '><i class="ion-arrow-right-a"></i></a>"'
         );
 
-        var $span = $('<span id="span' + i + '"></span>');
+        var $span = $('<span class="newsLine" id="span' + i + '"></span>');
 
         if(i % 2 == 0){
             $(".newsFeed").append($span);
@@ -88,8 +94,6 @@ function processData(data, pages) {
         addArrows();
     }
     
-
-    
 }
 
 function addArrows() {
@@ -106,8 +110,6 @@ function clickForward() {
 
 	pages = pages + 4;
 
-    //kitorli a tartalmat es nem rak oda semmit, ha lenti ajax lefut akkor rosszul tolti egymasra
-
     $.ajax({
         url: url,
         method: "GET",
@@ -118,7 +120,7 @@ function clickForward() {
             processData(data, pages);
         }
     });
-    $(location).attr('href', "#journal");
+    $(location).attr('href', "#newsFeed");
 }
 
 function clickBack() {
@@ -137,6 +139,6 @@ function clickBack() {
             processData(data, pages);
         }
     });
-    $(location).attr('href', "#journal");
+    $(location).attr('href', "#newsFeed");
 
 }
