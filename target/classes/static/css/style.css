@@ -264,7 +264,7 @@ p {
 
 .paddsection {
   padding-top: 60px;
-  padding-bottom: 90px;
+  padding-bottom: 40px;
 }
 
 .paddsections {
@@ -361,6 +361,14 @@ nav ul li a {
   padding: 22px;
 }
 
+.newsFeed {
+  margin-left: 80px;
+}
+
+.floatDiv {
+  padding: 4px;
+}
+
 .ion-ios-arrow-forward:hover .ion-ios-arrow-back:hover {
   color: #777e88;
 }
@@ -368,6 +376,7 @@ nav ul li a {
 .ion-ios-arrow-back {
   zoom: 350%;
   color: black;
+  margin: 27px;
 }
 
 #header {

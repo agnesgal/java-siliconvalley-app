@@ -7,19 +7,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class CityController {
+public class ProgController {
     @Autowired
     UserService userService;
-
-    @GetMapping("/city")
-    public String companiesView(Model model) {
+    @GetMapping("/prog")
+    public String progView(Model model) {
         String name = userService.getOurUser().getName();
         String picture = userService.getOurUser().getPicture();
 
         model.addAttribute("name", name);
         model.addAttribute("picture", picture);
 
-        return "city";
-    }
-
-}
+        return "prog";
+    }}

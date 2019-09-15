@@ -55,7 +55,7 @@ public class CompanyController {
             String picture = userService.getOurUser().getPicture();
 
             model.addAttribute("name", name);
-            model.addAttribute("picture", picture);
+            model.addAttribute("picture", picture   );
 
             Company company = companyRepository.getOne(company_id);
             model.addAttribute("company", company);
